@@ -1,6 +1,6 @@
 <?php
 namespace Eogsoft\Playground;
-//session_start();
+//session_start();   // I am trying use as less resources as possible
 
 use \PDO;
 use Eogsoft\Playground\mysql_crud_class;
@@ -59,7 +59,7 @@ try {
 
 // connection is ok, let us go further
 require('mysql_crud_class.php');
-$crud = new mysql_crud_class($dbh, 'persons', $settings['fillable'], $settings['viewable']);
+$crud = new mysql_crud_class($dbh, $settings['tablename'], $settings['fillable'], $settings['viewable']);
 
 // we are using action variable for all action
 // $action = filter_input(INPUT_POST, 'q');
